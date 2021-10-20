@@ -1,4 +1,5 @@
 import 'package:cours_allemand/data/rubriques_list.dart';
+import 'package:cours_allemand/route/routeName.dart';
 import 'package:flutter/material.dart';
 
 class HomeView extends StatefulWidget {
@@ -68,10 +69,10 @@ class _HomeViewState extends State<HomeView> {
     return Container(
       decoration: _boxeDecoration(
         '$imageBackground',
-        colorFilter: new ColorFilter.mode(
-          Colors.red.withOpacity(0.7),
-          BlendMode.dstATop,
-        ),
+        // colorFilter: new ColorFilter.mode(
+        //   Colors.red.withOpacity(0.7),
+        //   BlendMode.dstATop,
+        // ),
         fit: BoxFit.fill,
       ),
     );
@@ -83,26 +84,38 @@ class _HomeViewState extends State<HomeView> {
         color: Colors.white,
         child: GridView.count(
           crossAxisCount: 2,
-          padding: const EdgeInsets.all(10.0),
-          mainAxisSpacing: 10.0,
-          crossAxisSpacing: 10.0,
-          children: rubriquesList.map((e) => _containerWidget(e)).toList(),
+          padding: const EdgeInsets.all(8.0),
+          mainAxisSpacing: 5.0,
+          crossAxisSpacing: 5.0,
+          children:
+              rubriquesList.map((text) => _containerWidget(text)).toList(),
         ),
       ),
     );
   }
 
-  Container _containerWidget(String e) {
-    return Container(
-      decoration: _boxeDecoration('rubrique_image.png'),
-      child: Center(
-        child: _textWidget(
-          '$e',
-          color: Theme.of(context).primaryColor,
-          fontSize: e.length <= 2 ? 35 : 25,
-          fontFamily: "Italianno",
+  Widget _containerWidget(String text) {
+    return GestureDetector(
+      child: Container(
+        decoration: _boxeDecoration('rubrique_image.png'),
+        child: Center(
+          child: _textWidget(
+            '$text',
+            color: Theme.of(context).primaryColor,
+            fontSize: text.length <= 2 ? 35 : 25,
+            fontFamily: "Italianno",
+          ),
         ),
       ),
+      onTap: () => _onTapRubrique(text),
+    );
+  }
+
+  _onTapRubrique(String rubrique) {
+    Navigator.pushNamed(
+      context,
+      "$ListChapitresa1",
+      arguments: '$rubrique',
     );
   }
 

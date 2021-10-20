@@ -17,7 +17,9 @@ class MyApp extends StatelessWidget {
       title: 'JangAlma',
       theme: ThemeData(
         primaryColor: Colors.green,
-        appBarTheme: AppBarTheme(backgroundColor: Colors.white),
+        appBarTheme: AppBarTheme(
+          backgroundColor: Colors.green,
+        ),
       ),
       initialRoute: "$initRoute",
       onGenerateRoute: RouteGeerator.generateRoute,

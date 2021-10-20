@@ -1,4 +1,4 @@
-final List<String> rubriquesList = [
+const List<String> rubriquesList = [
   "A1",
   "A2",
   "B1",
