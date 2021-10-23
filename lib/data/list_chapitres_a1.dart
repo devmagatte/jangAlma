@@ -1,4 +1,4 @@
-const List<String> ListChapitresA1 = [
+const List<String> listChapitresA1 = [
   "Das Alphabet",
   "Die Begrüßungen",
   "Sich Vorstellen",

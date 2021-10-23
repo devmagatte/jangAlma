@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primaryColor: Colors.green,
         appBarTheme: AppBarTheme(
-          backgroundColor: Colors.green,
+          backgroundColor: Colors.white,
         ),
       ),
       initialRoute: "$initRoute",
