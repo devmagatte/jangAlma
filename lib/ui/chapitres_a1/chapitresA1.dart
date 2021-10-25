@@ -19,18 +19,14 @@ class _ChapittreA1State extends State<ChapittreA1> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        leading: Icon(
-          Icons.arrow_back,
-          color: Colors.green,
+        leading: GestureDetector(
+          child: Icon(
+            Icons.arrow_back,
+            color: Colors.green,
+          ),
+          onTap: () => Navigator.of(context).pop(),
         ),
         title: _flexibleSpaceTitle(this.title),
-        // Text(
-        //   this.title!,
-        //   style: TextStyle(
-        //     color: Colors.green,
-        //   ),
-        // ),
-        // backgroundColor: Colors.white,
       ),
       body: ListBuilder(),
     );
@@ -41,11 +37,11 @@ class _ChapittreA1State extends State<ChapittreA1> {
       padding: EdgeInsets.symmetric(vertical: 2.5, horizontal: 35.0),
       decoration: _boxeDecoration('image_logo.png'),
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 10.0),
+        padding: const EdgeInsets.symmetric(vertical: 50),
         child: _textWidget(
           '$text',
           color: Colors.white,
-          fontSize: 25.0,
+          fontSize: text!.length <= 6 ? 40 : 25.0,
           fontFamily: "Ephesis",
         ),
       ),
