@@ -1,8 +1,11 @@
 import 'package:cours_allemand/data/alphabet.dart';
+import 'package:cours_allemand/ui/widget_util/setPreferrence_orientation.dart';
+import 'package:cours_allemand/ui/widget_util/title_clipper.dart';
 import 'package:flutter/material.dart';
 
 class DasAlphabet extends StatefulWidget {
   final String? title;
+
   DasAlphabet({this.title, Key? key}) : super(key: key);
 
   @override
@@ -11,11 +14,17 @@ class DasAlphabet extends StatefulWidget {
 
 class _DasAlphabetState extends State<DasAlphabet> {
   final String? title;
+  @override
+  void dispose() {
+    super.dispose();
+    OrientationDevice.portrait();
+  }
 
   _DasAlphabetState(this.title);
 
   @override
   Widget build(BuildContext context) {
+    OrientationDevice.landscape();
     return SafeArea(
       top: false,
       child: Scaffold(
@@ -28,7 +37,7 @@ class _DasAlphabetState extends State<DasAlphabet> {
             ),
             onTap: () => Navigator.of(context).pop(),
           ),
-          title: _flexibleSpaceTitle(this.title),
+          title: TitleClipper(this.title),
         ),
         body: _bodyContainer(),
       ),
@@ -38,16 +47,29 @@ class _DasAlphabetState extends State<DasAlphabet> {
   Widget _bodyContainer() {
     return SingleChildScrollView(
       child: Container(
-        padding: EdgeInsets.symmetric(vertical: 10.0),
+        width: MediaQuery.of(context).size.width,
+        // padding: EdgeInsets.symmetric(vertical: 10.0),
         child: DataTable(
-          columns: langAlphabet.map((e) => DataColumn(label: Text(e))).toList(),
+          dataRowColor: MaterialStateProperty.all<Color>(Colors.green.shade50),
+          headingRowColor: MaterialStateProperty.all<Color>(Colors.green),
+          columns: langAlphabet
+              .map((e) => DataColumn(
+                    label: Text(
+                      e,
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ))
+              .toList(),
           rows: letterAlphabet
               .map((e) => DataRow(cells: [
-                    DataCell(Text("${e.number}")),
-                    DataCell(Text("${e.buchstabe}")),
-                    DataCell(Text("${e.aussprache}")),
-                    DataCell(Text("${e.deutsch}")),
-                    DataCell(Text("${e.wolof}")),
+                    _dataCell("${e.number}"),
+                    _dataCell("${e.buchstabe}"),
+                    _dataCell("${e.aussprache}"),
+                    _dataCell("${e.deutsch}"),
+                    _dataCell("${e.wolof}"),
                   ]))
               .toList(),
         ),
@@ -55,51 +77,10 @@ class _DasAlphabetState extends State<DasAlphabet> {
     );
   }
 
-  _flexibleSpaceTitle(String? text) {
-    return Container(
-      padding: EdgeInsets.symmetric(vertical: 2.5, horizontal: 35.0),
-      decoration: _boxeDecoration('image_logo.png'),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 40.0),
-        child: _textWidget(
-          '$text',
-          color: Colors.white,
-          fontSize: 25.0,
-          fontFamily: "Ephesis",
-        ),
-      ),
-    );
-  }
-
-  BoxDecoration _boxeDecoration(
-    String imageName, {
-    ColorFilter? colorFilter,
-    BoxFit? fit,
-  }) {
-    return BoxDecoration(
-      image: DecorationImage(
-        colorFilter: colorFilter,
-        image: AssetImage('assert/images/$imageName'),
-        fit: fit,
-      ),
-    );
-  }
-
-  Text _textWidget(
-    String text, {
-    Color? color,
-    double? fontSize,
-    String? fontFamily,
-  }) {
-    return Text(
-      text,
-      style: TextStyle(
-        color: color,
-        fontSize: fontSize,
-        fontFamily: fontFamily,
-      ),
-      maxLines: 1,
-      textAlign: TextAlign.center,
-    );
+  DataCell _dataCell(String text) {
+    return DataCell(Text(
+      "$text",
+      style: TextStyle(color: Colors.green[900]),
+    ));
   }
 }

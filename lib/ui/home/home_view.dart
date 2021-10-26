@@ -1,5 +1,6 @@
 import 'package:cours_allemand/data/rubriques_list.dart';
 import 'package:cours_allemand/route/routeName.dart';
+import 'package:cours_allemand/ui/widget_util/setPreferrence_orientation.dart';
 import 'package:flutter/material.dart';
 
 class HomeView extends StatefulWidget {
@@ -18,6 +19,7 @@ class _HomeViewState extends State<HomeView> {
 
   @override
   Widget build(BuildContext context) {
+    OrientationDevice.portrait();
     return Scaffold(
       body: CustomScrollView(
         slivers: [

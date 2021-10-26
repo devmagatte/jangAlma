@@ -101,27 +101,155 @@ List<Alphabet> letterAlphabet = [
       buchstabe: "N n",
       aussprache: "En",
       deutsch: "Neu",
-      wolof: "nooy")
-// 15	O o	O	Orange	orans
-// 16	P p	Pé	Papa	papa
-// 17	Q q	Cou	Quelle	q
-// 18	R r	Err	Ruhr	ruur
-// 19	S s	Ess	Sieben	zal
-// 20	T t	Té	Toll	tol
-// 21	U u	Ou	Und	ubbi
-// 22	V v	Faou	Vier	fiir
-// 23	W w	Vé	Welle	vé
-// 24	X x	Iks	Xylophone	iks
-// 25	Y y	Upsilon	Yoruba	yoruba
-// 26	Z z	Tsett	Zeit	ts
-// 27	ß 	Ess tsett	Soße	sose
-// 28	Ä ä/ae	E	Atmosphäre	reew
-// 29	Ü ü/ue	U	Lücke
-// 30	Ö ö/oe	Eu	Löwe	ëw
-// 31	Ei ei 	Aille	Brei	bray
-// 32	Äu äu	Oy	Häufig	toy
-// 34	Eu 	Oy	Heute	toy
-// 35	-ach-	Akh	Bach	baax
-// 36	-och-	Okh	Doch	dox
-// 37	-uch-	Oukh	Buch	buux
+      wolof: "nooy"),
+  Alphabet(
+      number: 15,
+      buchstabe: "O o",
+      aussprache: "O",
+      deutsch: "Orange",
+      wolof: "orans"),
+  Alphabet(
+      number: 16,
+      buchstabe: "P p",
+      aussprache: "Pé",
+      deutsch: "Papa",
+      wolof: "papa"),
+  Alphabet(
+      number: 17,
+      buchstabe: "Q q",
+      aussprache: "Cou",
+      deutsch: "Quelle",
+      wolof: "q"),
+  Alphabet(
+    number: 18,
+    buchstabe: "R r",
+    aussprache: "Err",
+    deutsch: "Ruhr",
+    wolof: "ruur",
+  ),
+  Alphabet(
+    number: 19,
+    buchstabe: "S s",
+    aussprache: "Ess",
+    deutsch: "Sieben",
+    wolof: "zal",
+  ),
+  Alphabet(
+    number: 20,
+    buchstabe: "T t",
+    aussprache: "Té",
+    deutsch: "Toll",
+    wolof: "tol",
+  ),
+  Alphabet(
+    number: 21,
+    buchstabe: "U u",
+    aussprache: "Ou",
+    deutsch: "Und",
+    wolof: "ubbi",
+  ),
+  Alphabet(
+    number: 22,
+    buchstabe: "V v",
+    aussprache: "Faou",
+    deutsch: "Vier",
+    wolof: "fiir",
+  ),
+  Alphabet(
+    number: 23,
+    buchstabe: "W w",
+    aussprache: "Vé",
+    deutsch: "Welle",
+    wolof: "vé",
+  ),
+  Alphabet(
+    number: 24,
+    buchstabe: "X x",
+    aussprache: "Iks",
+    deutsch: "Xylophone",
+    wolof: "iks",
+  ),
+  Alphabet(
+    number: 25,
+    buchstabe: "Y y",
+    aussprache: "Upsilon",
+    deutsch: "Yoruba",
+    wolof: "yoruba",
+  ),
+  Alphabet(
+    number: 26,
+    buchstabe: "Z z",
+    aussprache: "Tsett",
+    deutsch: "Zeit",
+    wolof: "ts",
+  ),
+  Alphabet(
+    number: 27,
+    buchstabe: "ß",
+    aussprache: "Ess tsett",
+    deutsch: "Soße",
+    wolof: "sose",
+  ),
+  Alphabet(
+    number: 28,
+    buchstabe: "Ä ä/ae",
+    aussprache: "E",
+    deutsch: "Atmosphäre",
+    wolof: "reew",
+  ),
+  Alphabet(
+      number: 29,
+      buchstabe: "Ü ü/ue",
+      aussprache: "U",
+      deutsch: "Lücke",
+      wolof: ""),
+  Alphabet(
+    number: 30,
+    buchstabe: "Ö ö/oe",
+    aussprache: "Eu",
+    deutsch: "Löwe",
+    wolof: "ëw",
+  ),
+  Alphabet(
+    number: 31,
+    buchstabe: "Ei ei",
+    aussprache: "Aille",
+    deutsch: "Brei",
+    wolof: "bray",
+  ),
+  Alphabet(
+    number: 32,
+    buchstabe: "Äu äu",
+    aussprache: "Oy",
+    deutsch: "Häufig",
+    wolof: "toy",
+  ),
+  Alphabet(
+    number: 34,
+    buchstabe: "Eu",
+    aussprache: "Oy",
+    deutsch: "Heute",
+    wolof: "toy",
+  ),
+  Alphabet(
+    number: 35,
+    buchstabe: "-ach-",
+    aussprache: "Akh",
+    deutsch: "Bach",
+    wolof: "baax",
+  ),
+  Alphabet(
+    number: 36,
+    buchstabe: "-och-",
+    aussprache: "Okh",
+    deutsch: "Doch",
+    wolof: "dox",
+  ),
+  Alphabet(
+    number: 37,
+    buchstabe: "-uch-",
+    aussprache: "Oukh",
+    deutsch: "Buch",
+    wolof: "buux",
+  ),
 ];
