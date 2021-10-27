@@ -2,7 +2,6 @@ import 'package:cours_allemand/ui/chapitres_a1/list.dart';
 import 'package:cours_allemand/ui/widget_util/setPreferrence_orientation.dart';
 import 'package:cours_allemand/ui/widget_util/title_clipper.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 class ChapittreA1 extends StatefulWidget {
   final String? title;

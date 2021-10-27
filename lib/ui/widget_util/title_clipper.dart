@@ -13,7 +13,7 @@ class TitleClipper extends StatelessWidget {
 
   _containerClipPath(String? text) {
     return ClipPath(
-      clipper: ParallelogramClipper(),
+      clipper: HexagonalClipper(),
       child: Container(
         color: Colors.green,
         child: Padding(
