@@ -76,6 +76,7 @@ class VerticalExample extends StatelessWidget {
   }
 
   _ontClikChapitre(context, String chapitre) {
+    print("${chapitre.replaceAll(' ', '').toLowerCase()}");
     Navigator.pushNamed(
       context,
       "${chapitre.replaceAll(' ', '').toLowerCase()}",

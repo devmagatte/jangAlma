@@ -24,7 +24,7 @@ class _HomeViewState extends State<HomeView> {
     OrientationDevice.portrait();
     return Scaffold(
       // appBar: _appBar(),
-      body: _bodyContainer(),
+      body: _containerBody(),
     );
   }
 
@@ -39,7 +39,7 @@ class _HomeViewState extends State<HomeView> {
               // color: Colors.green,
               height: 250,
               decoration: _boxeDecoration(
-                'image_logo.png',
+                'image_logo2.png',
                 // color: Colors.green,
                 fit: BoxFit.fitHeight,
               ),
@@ -139,10 +139,7 @@ class _HomeViewState extends State<HomeView> {
   _flexibleSpaceTitle() {
     return Container(
       padding: EdgeInsets.symmetric(vertical: 8, horizontal: 15.0),
-      decoration: _boxeDecoration(
-        'image_logo.png',
-        color: Colors.green.shade50,
-      ),
+      decoration: _boxeDecoration('image_logo2.png'),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 10.0),
         child: _textWidget(

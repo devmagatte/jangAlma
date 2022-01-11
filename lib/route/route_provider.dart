@@ -1,5 +1,6 @@
 import 'package:cours_allemand/ui/chapitres_a1/chapitresA1.dart';
 import 'package:cours_allemand/ui/chapitres_a1/view_contain_chapitre/das_alphabet.dart';
+import 'package:cours_allemand/ui/chapitres_a1/view_contain_chapitre/die_BegruBungen.dart';
 import 'package:cours_allemand/ui/home/home_view.dart';
 import 'package:flutter/material.dart';
 import 'routeName.dart';
@@ -24,6 +25,12 @@ class RouteGeerator {
       case '$dasAplhabet':
         return MaterialPageRoute(
           builder: (_) => DasAlphabet(
+            title: args.toString(),
+          ),
+        );
+      case '$dieBegruBungen':
+        return MaterialPageRoute(
+          builder: (_) => DieBegruBungen(
             title: args.toString(),
           ),
         );
