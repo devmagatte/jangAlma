@@ -13,31 +13,6 @@ class DieBegruBungen extends StatefulWidget {
 
 class _DieBegruBungenState extends State<DieBegruBungen> {
   final String? title;
-  int index = 0;
-  bool isDo = false;
-
-  final tabOne = {
-    'Formell',
-    'Informell',
-  };
-
-  final tabOneFormellContenu = {
-    'Guten',
-    'Morgen (08:00)',
-    'Guten Tag',
-    'Guten Abend (13:00)',
-    '',
-    ' ',
-  };
-
-  final tabOneInformellContenu = [
-    'Hallo',
-    'Hi',
-    'Grüß dich!',
-    'Servus',
-    'Moïn-moïn',
-    'Huhu',
-  ];
 
   _DieBegruBungenState(this.title);
 
