@@ -2,25 +2,26 @@ import 'package:cours_allemand/ui/widget_util/setPreferrence_orientation.dart';
 import 'package:cours_allemand/ui/widget_util/title_clipper.dart';
 import 'package:flutter/material.dart';
 
-class SichVorstellen extends StatefulWidget {
+class DieFamilie extends StatefulWidget {
   final String? title;
 
-  SichVorstellen({this.title, Key? key}) : super(key: key);
+  DieFamilie({this.title, Key? key}) : super(key: key);
 
   @override
-  _SichVorstellenState createState() => _SichVorstellenState(this.title);
+  _DieFamilieState createState() => _DieFamilieState(this.title);
 }
 
-class _SichVorstellenState extends State<SichVorstellen> {
+class _DieFamilieState extends State<DieFamilie> {
   final String? title;
-  final List<String> _column = ['', 'Sein', 'Kommen', 'wohnen'];
+  final List<String> _column = ['', 'Arbeiten', 'Sprechen', 'gehen'];
   final List<List<String>> _row = [
-    ['Ich', 'bin', 'komme', 'wohne'],
-    ['Du (familiär)', 'bist', 'kommst', 'wohnst'],
-    ['Sie (formell)', 'sind', 'kommen', 'wohnen'],
+    ["Ich", "arbeite", "spreche", "gehe"],
+    [" Du (familiär)", "arbeitest", "sprichst", "gehst"],
+    ["Er, sie, es", "arbeitet", "spricht", "geht"],
+    ["Sie (formell)", "arbeiten", "sprechen", "gehen"],
   ];
 
-  _SichVorstellenState(this.title);
+  _DieFamilieState(this.title);
 
   @override
   Widget build(BuildContext context) {
@@ -57,21 +58,30 @@ class _SichVorstellenState extends State<SichVorstellen> {
                 text: TextSpan(
                   style: TextStyle(color: Colors.black),
                   children: [
-                    _textDialogue('Modou', 'Guten Morgen!'),
                     _textDialogue('Anne ', 'Guten Tag'),
-                    _textDialogue('Modou', 'wie heißen Sie?'),
-                    _textDialogue('Anne ', 'ich heiße Anne, und Sie?'),
-                    _textDialogue(
-                        'Modou', 'Ich heiße Modou. Woher kommen Sie?'),
-                    _textDialogue('Anne ', 'Ich komme aus Deutschland'),
                     _textDialogue('Modou',
-                        'Ich komme aus Senegal und wohne hier, was sind Sie von Beruf?'),
-                    _textDialogue(
-                        'Anne ', 'Ich bin Lehrerin von Beruf und Sie?'),
-                    _textDialogue('Modou', 'Ha, super, ich bin Student.'),
+                        'Guten Morgen, Kommt bitte herein! Frau Müller'),
+                    _textDialogue('Anne ', 'Danke Modou, das ist nett!'),
+                    _textDialogue('Modou',
+                        'Das ist Mein Vater, er heißt Abdou und hier ist meine Mutter sie heißt Fatou. Und das ist Frau Müller, sie ist Lehrerin.'),
+                    _textDialogue('Abdou ',
+                        'Schön Sie kennen zu lernen, ich auch Lehrer von Beruf. Ich spreche ein Bisschen Deutsch.'),
+                    _textDialogue('Fatou ',
+                        'danke für den Besuch, Modou hat viel von Ihnen erzählt.'),
                     _textDialogue('Anne ',
-                        'Okay, tschüss! Nächstes Mal besuche ich Sie!'),
-                    _textDialogue('Modou', 'Danke sehr und auf Wiedersehen'),
+                        'Stimmt, er ist mit meinem Sohn befreundet. Er ist neunzehn Jahre alt. Wie alt bist du?'),
+                    _textDialogue('Modou',
+                        'Ich bin auch neunzehn, wir sind gleichaltrig. Mein Bruder und meine Schwester sind noch in der Schule.'),
+                    _textDialogue('Fatou ',
+                        'Frau Müller arbeiten meine Kinder fleißig in der Schule?'),
+                    _textDialogue(
+                        'Anne ', 'Ja, sie sind sehr fleißig und aufmerksam'),
+                    _textDialogue('Abdou ',
+                        'Natürlich! Ihr Onkel und Ihre Tante arbeiten neben der Schule und kontrollieren sie'),
+                    _textDialogue('Anne ',
+                        'Natürlich! Ihr Onkel und Ihre Tante arbeiten neben der Schule und kontrollieren sie!'),
+                    _textDialogue('Modou', 'Vielen Dank und auf Wiedersehen!'),
+                    _textDialogue('Anne', 'Anne'),
                   ],
                 ),
               ),
@@ -81,7 +91,7 @@ class _SichVorstellenState extends State<SichVorstellen> {
               width: MediaQuery.of(context).size.width,
               margin: EdgeInsets.only(left: 10.0),
               child: Text(
-                  "Ich heiße…\n\nIch komme aus \n\nIch wohne in..\n\nIch bin … von Beruf\n\n"),
+                  "Kommen Sie herein!\n\nDas ist mein/meine\n\nIch bin… Jahre alt/ich bin…\n\nIch arbeite als …\n\n"),
             ),
             _titleSection('Konjugation\n', padding: EdgeInsets.all(0)),
             Container(
