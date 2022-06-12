@@ -1,4 +1,3 @@
-import 'package:cours_allemand/ui/widget_util/setPreferrence_orientation.dart';
 import 'package:cours_allemand/ui/widget_util/title_clipper.dart';
 import 'package:flutter/material.dart';
 

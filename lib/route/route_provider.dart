@@ -7,6 +7,7 @@ import 'package:cours_allemand/ui/chapitres_a1/view_contain_chapitre/baat_yi.dar
 
 import 'package:cours_allemand/ui/home/home_view.dart';
 import 'package:flutter/material.dart';
+import '../ui/chapitres_a1/view_contain_chapitre/die_arbeit.dart';
 import 'routeName.dart';
 
 class RouteGeerator {
@@ -53,6 +54,12 @@ class RouteGeerator {
       case '$BaatYiRoute':
         return MaterialPageRoute(
           builder: (_) => BaatYi(
+            title: args.toString(),
+          ),
+        );
+      case '$dieArbeit':
+        return MaterialPageRoute(
+          builder: (_) => DieArbeit(
             title: args.toString(),
           ),
         );
