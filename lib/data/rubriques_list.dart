@@ -9,8 +9,8 @@ final List<Rubrique> rubriquesList = [
   // "Baat yi\nWörterbuch",
   // "Leebu\nSprichwörter",
   Rubrique(name: "A1", route: 'chapitresA1'),
-  Rubrique(name: "B1", route: 'chapitresA2'),
-  Rubrique(name: "B2", route: 'chapitresA2'),
+  // Rubrique(name: "B1", route: 'chapitresA2'),
+  // Rubrique(name: "B2", route: 'chapitresA2'),
   Rubrique(name: "Baat yi\nWörterbuch", route: 'baat_yi'),
 ];
 

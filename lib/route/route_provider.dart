@@ -1,4 +1,5 @@
 import 'package:cours_allemand/ui/chapitres_a1/chapitresA1.dart';
+import 'package:cours_allemand/ui/chapitres_a1/view_contain_chapitre/auf_dem_markt.dart';
 import 'package:cours_allemand/ui/chapitres_a1/view_contain_chapitre/das_alphabet.dart';
 import 'package:cours_allemand/ui/chapitres_a1/view_contain_chapitre/die_BegruBungen.dart';
 import 'package:cours_allemand/ui/chapitres_a1/view_contain_chapitre/die_familie.dart';
@@ -60,6 +61,12 @@ class RouteGeerator {
       case '$dieArbeit':
         return MaterialPageRoute(
           builder: (_) => DieArbeit(
+            title: args.toString(),
+          ),
+        );
+      case '$aufDemMarkt':
+        return MaterialPageRoute(
+          builder: (_) => AufDemMarkt(
             title: args.toString(),
           ),
         );
