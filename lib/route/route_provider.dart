@@ -3,6 +3,8 @@ import 'package:cours_allemand/ui/chapitres_a1/view_contain_chapitre/das_alphabe
 import 'package:cours_allemand/ui/chapitres_a1/view_contain_chapitre/die_BegruBungen.dart';
 import 'package:cours_allemand/ui/chapitres_a1/view_contain_chapitre/die_familie.dart';
 import 'package:cours_allemand/ui/chapitres_a1/view_contain_chapitre/sich_vorstellen.dart';
+import 'package:cours_allemand/ui/chapitres_a1/view_contain_chapitre/baat_yi.dart';
+
 import 'package:cours_allemand/ui/home/home_view.dart';
 import 'package:flutter/material.dart';
 import 'routeName.dart';
@@ -45,6 +47,12 @@ class RouteGeerator {
       case '$diefamilie':
         return MaterialPageRoute(
           builder: (_) => DieFamilie(
+            title: args.toString(),
+          ),
+        );
+      case '$BaatYiRoute':
+        return MaterialPageRoute(
+          builder: (_) => BaatYi(
             title: args.toString(),
           ),
         );

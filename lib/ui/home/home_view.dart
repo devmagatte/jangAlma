@@ -1,8 +1,8 @@
 import 'package:cours_allemand/data/rubriques_list.dart';
-import 'package:cours_allemand/route/routeName.dart';
 import 'package:cours_allemand/ui/widget_util/setPreferrence_orientation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
+
+import '../widget_util/media_query.dart';
 
 class HomeView extends StatefulWidget {
   final String title;
@@ -23,186 +23,135 @@ class _HomeViewState extends State<HomeView> {
   Widget build(BuildContext context) {
     OrientationDevice.portrait();
     return Scaffold(
-      // appBar: _appBar(),
-      body: _containerBody(),
-    );
-  }
-
-  _bodyContainer() {
-    return SingleChildScrollView(
-      child: Container(
-        padding: EdgeInsets.only(top: 10.0),
-        // color: Colors.grey.shade200,
+      body: Container(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Container(
-              // color: Colors.green,
-              height: 250,
-              decoration: _boxeDecoration(
-                'image_logo2.png',
-                // color: Colors.green,
-                fit: BoxFit.fitHeight,
-              ),
-              child: Column(
-                children: [
-                  Align(
-                    alignment: Alignment.topLeft,
-                    child: Padding(
-                      padding: const EdgeInsets.only(top: 40.0, left: 10.0),
-                      child: Icon(
-                        Icons.menu,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ),
-                  // SizedBox(height: 10.0),
-                  Align(
-                    alignment: Alignment.bottomCenter,
-                    child: Padding(
-                      padding: const EdgeInsets.only(top: 10.0),
-                      child: Container(
-                        child: _textWidget(
-                          'JangAlma',
-                          color: Colors.white,
-                          fontSize: 60.0,
-                          fontFamily: "Ephesis",
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            GridView.count(
-              shrinkWrap: true,
-              physics: NeverScrollableScrollPhysics(),
-              crossAxisCount: 2,
-              padding: const EdgeInsets.all(8.0),
-              mainAxisSpacing: 5.0,
-              crossAxisSpacing: 5.0,
-              children:
-                  rubriquesList.map((text) => _containerWidget(text)).toList(),
-            ),
+            _header(context),
+            _body(),
           ],
         ),
       ),
     );
   }
 
-  _appBar() {
-    return AppBar(
-      elevation: 0,
-      backgroundColor: Colors.green,
-      centerTitle: true,
-      leading: Icon(Icons.menu, color: Colors.white),
-      title: _textWidget(
-        'JangAlma',
-        color: Colors.white,
-        fontSize: 30.0,
-        fontFamily: "Ephesis",
+  Expanded _body() {
+    return Expanded(
+      child: Container(
+        child: GridView.count(
+          scrollDirection: Axis.vertical,
+          shrinkWrap: true,
+          crossAxisCount: 2,
+          crossAxisSpacing: 30,
+          mainAxisSpacing: 30.0,
+          physics: const ScrollPhysics(),
+          children: rubriquesList
+              .map((rubrique) => _containerWidget(rubrique))
+              .toList(),
+        ),
       ),
+      flex: 3,
     );
   }
 
-  _containerBody() {
-    return CustomScrollView(
-      slivers: [
-        _sliverAppBar(),
-        _rubriqueList(),
+  Expanded _header(BuildContext context) {
+    return Expanded(
+      child: SizedBox(
+        child: Container(
+          decoration: BoxDecoration(
+            color: Colors.green,
+            image: DecorationImage(
+              colorFilter: ColorFilter.mode(
+                Colors.green.shade600,
+                BlendMode.modulate,
+              ),
+              image: AssetImage(
+                'assert/images/dashboard.jpg',
+              ),
+              fit: BoxFit.cover,
+            ),
+            borderRadius: BorderRadiusDirectional.only(
+              bottomEnd: Radius.circular(30),
+              bottomStart: Radius.circular(30),
+            ),
+          ),
+          child: Container(
+            margin: EdgeInsets.symmetric(
+              vertical: MediaQuerySize(context).sizeFromHeight(50),
+              horizontal: MediaQuerySize(context).sizeFromHeight(20),
+            ),
+            width: MediaQuerySize(context).width,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                _iconMenu(),
+                _texteWelcome(),
+              ],
+            ),
+          ),
+        ),
+      ),
+      flex: 1,
+    );
+  }
+
+  Column _texteWelcome() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          'Bonjour,',
+          style: TextStyle(
+            fontSize: MediaQuerySize(context).sizeFromHeight(20),
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        Text(
+          "Apprend l'allemand facilement !",
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: MediaQuerySize(context).sizeFromHeight(17),
+          ),
+        ),
       ],
     );
   }
 
-  _sliverAppBar() {
-    return SliverAppBar(
-      elevation: 0,
-      floating: false,
-      pinned: true,
-      backgroundColor: Colors.green,
-      title: Icon(
+  Padding _iconMenu() {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 8.0),
+      child: Icon(
         Icons.menu,
-        color: Theme.of(context).primaryColor,
-      ),
-      expandedHeight: 200.0,
-      flexibleSpace: _flexibleSpace(),
-    );
-  }
-
-  _flexibleSpace() {
-    return FlexibleSpaceBar(
-      centerTitle: true,
-      title: _flexibleSpaceTitle(),
-      background: _flexibleSpaceBackground(),
-    );
-  }
-
-  _flexibleSpaceTitle() {
-    return Container(
-      padding: EdgeInsets.symmetric(vertical: 8, horizontal: 15.0),
-      decoration: _boxeDecoration('image_logo2.png'),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 10.0),
-        child: _textWidget(
-          'JangAlma',
-          color: Colors.white,
-          fontSize: 18.0,
-          fontFamily: "Ephesis",
-        ),
-      ),
-    );
-  }
-
-  _flexibleSpaceBackground() {
-    return Container(
-      decoration: _boxeDecoration(
-        '$imageBackground',
-        // colorFilter: new ColorFilter.mode(
-        //   Colors.red.withOpacity(0.7),
-        //   BlendMode.dstATop,
-        // ),
-        fit: BoxFit.fill,
-      ),
-    );
-  }
-
-  _rubriqueList() {
-    return SliverFillRemaining(
-      child: Container(
         color: Colors.white,
-        child: GridView.count(
-          crossAxisCount: 2,
-          padding: const EdgeInsets.all(8.0),
-          mainAxisSpacing: 5.0,
-          crossAxisSpacing: 5.0,
-          children:
-              rubriquesList.map((text) => _containerWidget(text)).toList(),
-        ),
       ),
     );
   }
 
-  Widget _containerWidget(String text) {
+  Widget _containerWidget(Rubrique rubrique) {
     return GestureDetector(
       child: Container(
         decoration: _boxeDecoration('rubrique_image.png'),
         child: Center(
           child: _textWidget(
-            '$text',
+            '${rubrique.name}',
             color: Theme.of(context).primaryColor,
-            fontSize: text.length <= 2 ? 35 : 25,
+            fontSize: rubrique.name.length <= 2
+                ? MediaQuerySize(context).sizeFromHeight(35)
+                : MediaQuerySize(context).sizeFromHeight(25),
             fontFamily: "Italianno",
           ),
         ),
       ),
-      onTap: () => _onTapRubrique(text),
+      onTap: () => _onTapRubrique(rubrique),
     );
   }
 
-  _onTapRubrique(String rubrique) {
+  _onTapRubrique(Rubrique rubrique) {
     Navigator.pushNamed(
       context,
-      "$ListChapitresa1",
-      arguments: '$rubrique',
+      rubrique.route,
+      arguments: rubrique.name.replaceAll('\n', ' / '),
     );
   }
 
@@ -236,6 +185,7 @@ class _HomeViewState extends State<HomeView> {
         fontFamily: fontFamily,
         fontWeight: FontWeight.bold,
       ),
+      textAlign: TextAlign.center,
     );
   }
 }
