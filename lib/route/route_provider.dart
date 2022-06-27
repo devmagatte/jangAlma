@@ -3,12 +3,14 @@ import 'package:cours_allemand/ui/chapitres_a1/view_contain_chapitre/auf_dem_mar
 import 'package:cours_allemand/ui/chapitres_a1/view_contain_chapitre/das_alphabet.dart';
 import 'package:cours_allemand/ui/chapitres_a1/view_contain_chapitre/die_BegruBungen.dart';
 import 'package:cours_allemand/ui/chapitres_a1/view_contain_chapitre/die_familie.dart';
+import 'package:cours_allemand/ui/chapitres_a1/view_contain_chapitre/die_zeit.dart';
 import 'package:cours_allemand/ui/chapitres_a1/view_contain_chapitre/sich_vorstellen.dart';
 import 'package:cours_allemand/ui/chapitres_a1/view_contain_chapitre/baat_yi.dart';
 
 import 'package:cours_allemand/ui/home/home_view.dart';
 import 'package:flutter/material.dart';
 import '../ui/chapitres_a1/view_contain_chapitre/die_arbeit.dart';
+import '../ui/chapitres_a1/view_contain_chapitre/essen_und_trinken.dart';
 import 'routeName.dart';
 
 class RouteGeerator {
@@ -67,6 +69,19 @@ class RouteGeerator {
       case '$aufDemMarkt':
         return MaterialPageRoute(
           builder: (_) => AufDemMarkt(
+            title: args.toString(),
+          ),
+        );
+      case '$dieZeit':
+        return MaterialPageRoute(
+          builder: (_) => DieZeit(
+            title: args.toString(),
+          ),
+        );
+
+      case '$dasEssenUndTrinken':
+        return MaterialPageRoute(
+          builder: (_) => DasEssenUndTrinken(
             title: args.toString(),
           ),
         );

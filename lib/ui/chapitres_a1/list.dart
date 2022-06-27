@@ -3,8 +3,6 @@ import 'package:cours_allemand/ui/chapitres_a1/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:auto_animated/auto_animated.dart';
 
-// 70 753 10 85
-//76 652 5904
 class ListBuilder extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Scaffold(
@@ -76,7 +74,6 @@ class VerticalExample extends StatelessWidget {
   }
 
   _ontClikChapitre(context, String chapitre) {
-    print("${chapitre.replaceAll(' ', '').toLowerCase()}");
     Navigator.pushNamed(
       context,
       "${chapitre.replaceAll(' ', '').toLowerCase()}",
